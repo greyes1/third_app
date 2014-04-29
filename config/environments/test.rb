@@ -34,4 +34,8 @@ ThirdApp::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+  #Speed up TDD by lowering BCrypt cost
+  silece_warnings do
+    BCrypt::Engine::DEFUALT_COST = BCrypt::Engine::MIN_COST
+  end
 end
